@@ -17,6 +17,11 @@
     <%- partial('post/gallery') %>
   <% } %>
 
+  <% if (item.featured_image){ %>
+    <img src="<%- item.featured_image %>" style="display:block; margin: 0 auto; margin-bottom: 50px; max-width: 90%; height: auto;">
+  <% } %>
+
+
   <div class="article-content">
     <div class="entry">
       <% if (item.excerpt && index){ %>
@@ -51,5 +56,6 @@
   </div>
 </article>
 <% if (!index){ %>
+  <!-- youyan -->
   <%- partial('comment') %>
 <% } %>

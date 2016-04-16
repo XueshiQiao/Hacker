@@ -20,23 +20,23 @@ if (page.archive){
 <% } else { %>
   <div class="archive">
     <% page.posts.each(function(item){ %>
-      <article class="<%= item.layout %> article">
+      <div class="<%= item.layout %>">
         <div class="post-content">
           <header>
             <div class="icon"></div>
-            <time datetime="<%= item.date.toDate().toISOString() %>"><a href="<%- config.root %><%- item.path %>"><%= item.date.format(config.date_format) %></a></time>
+            <time datetime="<%= item.date.toDate().toISOString() %>"><a href="<%- config.root %><%- item.path %>" style="color: gray;"><%= item.date.format(config.date_format) %></a></time>
             <% if (item.link){ %>
               <% if (item.title){ %>
-                <h3 class=""><a href="<%- item.link %>" target="_blank"><span><%= item.title %></span></a></h3>
+                <span class=""><a href="<%- item.link %>" target="_blank" style="color: red;"><span><%= item.title %></span></a></span>
               <% } else { %>
-                <h3 class=""><a href="<%- item.link %>" target="_blank"><span><%= item.link %></span></a></h3>
+                <span class=""><a href="<%- item.link %>" target="_blank" style="color: red;"><span><%= item.link %></span></a></span>
               <% } %>
             <% } else { %>
-              <h3 class=""><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></h3>
+              <span class=""><a href="<%- config.root %><%- item.path %>" style="color: red;"><span><%= item.title %></span></a></span>
             <% } %>
           </header>
         </div>
-      </article>
+      </div>
     <% }); %>
     <%- partial('pagination') %>
   </div>

@@ -1,10 +1,16 @@
 menu:
   Home: /
   Archives: /archives
+  About Me: /aboutme
+  RSS: /atom.xml
 
 # duoshuo comment
 duoshuo: false
-duoshuo_name: 
+duoshuo_name:
+
+#友言
+youyan: true
+youyan_id: 1736636
 
 # google analytics
-googleTrackId: 
+googleTrackId: UA-42523801-1

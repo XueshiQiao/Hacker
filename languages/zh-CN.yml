@@ -7,9 +7,12 @@ archive_a: 归档
 archive_b: 归档：%s
 page: 第 %d 页
 recent_posts: 最新文章
+read_more: 阅读全文
 
 Home: 主页
 Archives: 归档
+Categories: 分类
+Tags: 标签
 About: 关于
 Links: 链接
 RSS: 订阅

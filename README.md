@@ -1,42 +1,117 @@
-# Hacker
-## Hacker是一款专注于写作的简洁博客主题。在如此讲究复杂排版的趋势下，选择回归本源，专注于写作这件事。
-一开始是[moyo](http://liuxinyu.me/)为Wordpress所创作的一个主题，由DaraW移植到Hexo。
+# Hacker | [中文版文档](/README_zh-CN.md)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)  [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.svg?v=103)](https://opensource.org/licenses/GPL-2.0)  
+
+
+__Hacker is a simple blog theme focused on writing. In such a trend of complex typography, choose the return to origins, focusing on writing this matter.__  
+
+The beginning is [moyo](http://liuxinyu.me/) created a theme of Wordpress , by DaraW transplanted to Hexo.
 
 ## Demo
-[DaraW](http://blog.daraw.cn/)
+You can refer to my blog: [DaraW](http://blog.daraw.cn/).  
+Also, you can try auto-deployment with TravisCI, refer to [CodeDaraW/Blog](https://github.com/CodeDaraW/Blog)。
 
-## 安装
+![](https://ooo.0o0.ooo/2016/08/04/57a306f56bee2.png
+)
 
-在`themes`文件夹中创建文件夹`hacker`，将主题文件都复制粘贴至`hacker`文件夹，然后在hexo全局配置文件`_config.yml`中应用主题：
+## Installation
+Firstly get the theme files, `git clone` or `download zip` both are ok.  
+
+Create a folder named `Hacker` in the folder `themes`, and copy all the theme files to the folder `Hacker`.  
+
+Then apply the theme in the hexo global configuration file `_config.yml`:
+
 ```yaml
-theme: hacker
+theme: Hacker
 ```
-这样就安装好了，开始享受吧~
+Now all are in order, just enjoy~
 
-## 配置
-在主题配置文件`_config.yml`中：
+__Notice: After every update, you'd better run command `hexo clean` to clean cache files before Hexo generating, in case of some problems cache files bring.__
+
+
+## Configure
+### Enable comments and Google Analytics
+Refering to the example configuration file `_config.example.yml`, 
+create the theme configuration file `_config.yml` and edit it:
 
 ```yaml
-# duoshuo comment
-duoshuo: true
-duoshuo_name:
+# gitment
+gitment: false
+gitment_owner:
+gitment_repo:
+gitment_client_id:
+gitment_client_secret:
+
+# gitalk
+gitalk: false
+gitalk_owner:
+gitalk_admin: []
+gitalk_repo:
+gitalk_client_id:
+gitalk_client_secret:
+
+# valine comment
+valine: false
+leancloud_id:
+leancloud_key:
+
+# disqus comment
+disqus: false
+disqus_shortname:
 
 # google analytics
 googleTrackId:
 ```
 
+`gitment`: `boolean`，use gitment or not  
+`gitment_owner`: `string`，your GitHub ID  
+`gitment_repo`: `string`，the repo to store comment data  
+`gitment_client_id`: `string`，your client ID  
+`gitment_client_secret`: `string`，your client secret  
 
-`duoshuo`代表是否开启多说评论，设为`false`则为取消使用多说；  
-`duoshuo_name`为你的多说用户ID，请不要使用别人的ID。
+`gitalk`: `boolean`，use gitalk or not  
+`gitalk_owner`: `string`，your GitHub ID  
+`gitalk_admin`: `array`，all the admin GitHub IDs  
+`gitalk_repo`: `string`，the repo to store comment data 
+`gitalk_client_id`: `string`，your client ID 
+`gitalk_client_secret`: `string`，your client secret  
 
-`googleTrackId`为谷歌分析的个人ID，留空则为不使用谷歌分析。
 
-## 待办
-* 添加夜间模式
-* 修改多说评论框样式
-* 去除无用css代码
+`valine`: `boolean`, use Valine or not  
+`leancloud_id`: `string`, your leancloud ID  
+`leancloud_key`: `string`, your leancloud Key  
 
-暂时不会考虑添加分享等插件。
+`disqus`: `boolean`, use disqus or not;  
+`disqus_shortname`: your disqus site shortname.
 
-## 协议
-GPL(General Public License)
+`googleTrackId`: your Google Analytics ID, Hacker will not use Google Analytics if it's empty.
+
+### Enable Categories and Tags pages
+Categories Page: run `hexo new page categories`，then modify the generated file `source/categories/index.md`：
+``` markdown
+title: categories
+date: 2017-01-30 19:16:17
+layout: "categories"
+---  
+```
+If you need to close comments of this page , you can add a line `comments: false`; `title` corresponds to the title of the page.
+
+Tags Page: run `hexo new page tags`，then modify the generated file `source/tags/index.md`：
+``` markdown
+title: tags
+date: 2017-01-30 19:16:17
+layout: "tags"
+---  
+```
+Configuration is the same as Categories Page.  
+
+Add links to the menu: Edit the `_config.yml` file of the theme, add `Categories: /categories` and `Tags: /tags` in `menu` like this：
+``` yml
+menu:
+  Home: /
+  Archives: /archives
+  Categories: /categories
+  Tags: /tags
+```
+
+## License
+GNU GPL(General Public License) v2.0

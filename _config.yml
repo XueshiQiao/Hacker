@@ -4,13 +4,12 @@ menu:
   About Me: /AboutMe
   RSS: /atom.xml
 
-# duoshuo comment
-duoshuo: false
-duoshuo_name:
-
-#友言
-youyan: true
-youyan_id: 1736636
+# gitment
+gitment: true
+gitment_owner: 'XueshiQiao'
+gitment_repo: 'GitmentOfMyBlog'
+gitment_client_id: '48ebf2dbd107227f4c9b'
+gitment_client_secret: 'c81de17c91d1289347e35167fce08a88ed4766c5'
 
 # google analytics
 googleTrackId: UA-42523801-3
